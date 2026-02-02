@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Advance Lab | Цифровые инструменты для роста</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#000000",
+            "accent": "#0066cc",
+            "background-light": "#ffffff",
+            "apple-gray": "#f5f5f7",
+            "apple-card": "#fafafa",
+            "apple-text": "#1d1d1f",
+            "apple-subtext": "#86868b",
+          },
+          fontFamily: {
+            "sans": ["Inter", "-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Segoe UI", "Roboto", "sans-serif"],
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "lg": "12px",
+            "xl": "18px",
+            "2xl": "24px",
+            "3xl": "32px",
+            "4xl": "40px",
+          },
+        },
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #1d1d1f;
+    }
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+    .apple-button {
+      @apply px-6 py-3 rounded-full font-medium transition-all duration-200 inline-block;
+    }
+    .apple-button-primary {
+      @apply bg-black text-white hover:bg-gray-800;
+    }
+    .apple-button-secondary {
+      @apply bg-apple-gray text-apple-text hover:bg-gray-200;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .iphone-frame {
+      position: relative;
+      width: 300px;
+      height: 600px;
+      background: #1d1d1f;
+      border-radius: 44px;
+      padding: 10px;
+      box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
+      border: 6px solid #333;
+    }
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 36px;
+      overflow: hidden;
+      position: relative;
+    }
+    .iphone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 25px;
+      background: #1d1d1f;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
+      z-index: 20;
+    }
+    .live-indicator {
+      @apply flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-black shadow-sm;
+    }
+    .pulse {
+      width: 6px;
+      height: 6px;
+      background: #ff3b30;
+      border-radius: 50%;
+    }
+    /* Scroll-triggered animations */
+    .scroll-anim {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .scroll-anim.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-anim-delay-1 { transition-delay: 0.1s; }
+    .scroll-anim-delay-2 { transition-delay: 0.2s; }
+    .scroll-anim-delay-3 { transition-delay: 0.3s; }
+    .scroll-anim-delay-4 { transition-delay: 0.4s; }
+    .scroll-anim-delay-5 { transition-delay: 0.5s; }
+    .scroll-anim-scale {
+      opacity: 0;
+      transform: scale(0.96) translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .scroll-anim-scale.in-view {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img src="images/logo.png" alt="Advance Lab" class="h-8 w-auto"/>
+        <h2 class="text-xl font-semibold tracking-tight uppercase">Advance Lab</h2>
+      </div>
+      <nav class="hidden md:flex items-center gap-10">
+        <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#process">Процесс</a>
+        <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#packages">Пакеты</a>
+        <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#why-us">Преимущества</a>
+        <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#works">Работы</a>
+      </nav>
+      <a class="apple-button apple-button-primary text-sm py-2 px-5" href="#contact">Обсудить проект</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative pt-44 pb-32 px-6 overflow-hidden">
+      <div class="max-w-5xl mx-auto text-center space-y-8">
+        <h1 class="scroll-anim text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-apple-text">
+          Создаём цифровые инструменты для роста вашего бизнеса.
+        </h1>
+        <p class="scroll-anim scroll-anim-delay-1 text-xl md:text-2xl text-apple-subtext font-normal max-w-3xl mx-auto leading-relaxed">
+          Стратегический дизайн и построение процессов для усиления ваших позиций на рынке и увеличения выручки.
+        </p>
+        <div class="scroll-anim scroll-anim-delay-2 pt-4">
+          <a class="apple-button apple-button-primary text-lg px-8 py-4" href="#contact">Обсудить проект</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 px-6 bg-apple-gray border-y border-gray-100" id="process">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="scroll-anim text-4xl md:text-5xl font-bold tracking-tight mb-16 text-center">Как мы работаем</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="scroll-anim bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+            <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-apple-text text-white text-sm font-bold mb-5">1</span>
+            <span class="material-symbols-outlined text-3xl text-apple-text mb-3">insights</span>
+            <h3 class="text-xl font-bold mb-3">Анализ</h3>
+            <p class="text-apple-subtext text-sm leading-relaxed">Аудит бизнес-потребностей и определение KPI для роста.</p>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-1 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+            <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-apple-text text-white text-sm font-bold mb-5">2</span>
+            <span class="material-symbols-outlined text-3xl text-apple-text mb-3">palette</span>
+            <h3 class="text-xl font-bold mb-3">Дизайн</h3>
+            <p class="text-apple-subtext text-sm leading-relaxed">Разработка премиальных интерфейсов с упором на эстетику и ясность.</p>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-2 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+            <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-apple-text text-white text-sm font-bold mb-5">3</span>
+            <span class="material-symbols-outlined text-3xl text-apple-text mb-3">rocket_launch</span>
+            <h3 class="text-xl font-bold mb-3">Запуск</h3>
+            <p class="text-apple-subtext text-sm leading-relaxed">Быстрое развертывание с использованием современного стека технологий.</p>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-3 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col">
+            <span class="inline-flex w-10 h-10 items-center justify-center rounded-full bg-apple-text text-white text-sm font-bold mb-5">4</span>
+            <span class="material-symbols-outlined text-3xl text-apple-text mb-3">trending_up</span>
+            <h3 class="text-xl font-bold mb-3">Продвижение</h3>
+            <p class="text-apple-subtext text-sm leading-relaxed">Стратегический маркетинг для вывода продукта на целевую аудиторию.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 px-6 bg-white border-y border-gray-100" id="packages">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 text-center">
+          <h2 class="scroll-anim text-4xl md:text-5xl font-bold tracking-tight mb-4">Пакеты</h2>
+          <p class="scroll-anim scroll-anim-delay-1 text-xl text-apple-subtext max-w-2xl mx-auto">Три формата: от лендинга до продукта с сайтом, Mini App и продвижением. Выбираете объём — мы делаем под ключ.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="scroll-anim bg-apple-gray p-10 rounded-3xl flex flex-col h-full border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold mb-2">Сайт</h3>
+              <p class="text-apple-subtext">Под ваши цели: дизайн, вёрстка, базовая SEO.</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 500 $</p>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow">
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Адаптивный дизайн под мобильные и десктоп</li>
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>SEO и подключение аналитики</li>
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Интеграция с CMS при необходимости</li>
+            </ul>
+            <a class="apple-button apple-button-secondary text-center" href="#contact">Выбрать</a>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-1 bg-apple-gray p-10 rounded-3xl flex flex-col h-full border-2 border-black shadow-xl transition-transform hover:-translate-y-1 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-bold uppercase tracking-widest py-1 px-4 rounded-full">Популярно</div>
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold mb-2">Сайт + Mini App</h3>
+              <p class="text-apple-subtext">Сайт и приложение в Telegram с общей логикой и одним контактом.</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 800 $</p>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow">
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Маркетинговый сайт</li>
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Telegram Mini App под ваш сценарий</li>
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Один бэкенд для сайта и приложения</li>
+            </ul>
+            <a class="apple-button apple-button-primary text-center" href="#contact">Выбрать</a>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-2 bg-apple-gray p-10 rounded-3xl flex flex-col h-full border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold mb-2">Полный цикл</h3>
+              <p class="text-apple-subtext">Сайт, Mini App, стратегия запуска и продвижение. Всё из одних рук.</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 1 300 $</p>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow">
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Сайт и Mini App</li>
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Стратегия запуска и KPI</li>
+              <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Реклама и маркетинг до результата</li>
+            </ul>
+            <a class="apple-button apple-button-secondary text-center" href="#contact">Выбрать</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 px-6 bg-apple-gray" id="why-us">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="scroll-anim text-4xl md:text-5xl font-bold tracking-tight mb-16 text-center">Почему работают с нами</h2>
+        <div class="space-y-12">
+          <div class="scroll-anim flex gap-8 items-start border-b border-gray-100 pb-12">
+            <div class="w-12 h-12 rounded-full bg-apple-gray flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-apple-text">trending_up</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Ориентир на результат</h3>
+              <p class="text-apple-subtext text-lg">Делаем не «красивую картинку», а продукт, который решает задачу и приносит выгоду. Дизайн и копирайт под конверсию.</p>
+            </div>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-1 flex gap-8 items-start border-b border-gray-100 pb-12">
+            <div class="w-12 h-12 rounded-full bg-apple-gray flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-apple-text">visibility</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Понятный интерфейс</h3>
+              <p class="text-apple-subtext text-lg">Минимум лишнего, чёткая структура. Пользователь сразу понимает, куда нажать и что делать — без инструкций.</p>
+            </div>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-2 flex gap-8 items-start border-b border-gray-100 pb-12">
+            <div class="w-12 h-12 rounded-full bg-apple-gray flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-apple-text">person_pin</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Один контакт — вся ответственность</h3>
+              <p class="text-apple-subtext text-lg">Один менеджер ведёт проект от брифа до сдачи. Нет цепочки «дизайнер — разработчик — ещё кто-то»: вы общаетесь с теми, кто делает.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-32 bg-white overflow-hidden" id="works">
+      <div class="max-w-7xl mx-auto px-6 mb-20 text-center">
+        <h2 class="scroll-anim text-4xl md:text-5xl font-bold tracking-tight mb-4">Наши работы</h2>
+        <p class="scroll-anim scroll-anim-delay-1 text-xl text-apple-subtext max-w-2xl mx-auto">Исследуйте наши недавние проекты через живые интерфейсы и бесшовный UX.</p>
+      </div>
+      <div class="relative">
+        <div class="flex overflow-x-auto gap-10 px-8 md:px-[calc((100vw-80rem)/2+2rem)] pb-20 hide-scrollbar snap-x snap-mandatory scroll-smooth">
+          <div class="flex-none snap-center w-[420px]">
+            <div class="scroll-anim-scale relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="images/fintech-evolution.png">
+                <source src="videos/fintech-evolution.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="scroll-anim scroll-anim-delay-1 mt-6 text-center">
+              <h3 class="text-2xl font-bold tracking-tight mb-2">FinTech Evolution</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Инвестиционная платформа с фокусом на UX и безопасность транзакций.</p>
+            </div>
+          </div>
+          <div class="flex-none snap-center w-[420px]">
+            <div class="scroll-anim-scale scroll-anim-delay-1 relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
+              <img alt="Urban Style" class="w-full h-full object-cover object-center" src="images/urban-style.png" loading="lazy"/>
+            </div>
+            <div class="scroll-anim scroll-anim-delay-2 mt-6 text-center">
+              <h3 class="text-2xl font-bold tracking-tight mb-2">Urban Style</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Минималистичный интернет-магазин с конверсией выше рыночной на 40%.</p>
+            </div>
+          </div>
+          <div class="flex-none snap-center w-[420px]">
+            <div class="scroll-anim-scale scroll-anim-delay-2 relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="videos/dataprime-saas.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="scroll-anim scroll-anim-delay-3 mt-6 text-center">
+              <h3 class="text-2xl font-bold tracking-tight mb-2">DataPrime SaaS</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Аналитический инструмент для визуализации сложных бизнес-процессов.</p>
+            </div>
+          </div>
+          <div class="flex-none snap-center w-[420px]">
+            <div class="scroll-anim-scale scroll-anim-delay-3 relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="videos/cryptobot-miniapp.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="scroll-anim scroll-anim-delay-4 mt-6 text-center">
+              <h3 class="text-2xl font-bold tracking-tight mb-2">CryptoBot Mini App</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Полнофункциональный торговый терминал внутри мессенджера Telegram.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-32 px-6 border-t border-gray-100" id="contact">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="scroll-anim text-5xl md:text-7xl font-bold tracking-tight mb-12">Готовы к росту?</h2>
+        <div class="scroll-anim scroll-anim-delay-1 mb-16">
+          <a class="apple-button apple-button-primary text-xl px-12 py-5 inline-block" href="mailto:hello@advancelab.com">Обсудить проект</a>
+        </div>
+        <div class="scroll-anim scroll-anim-delay-2 flex flex-col md:flex-row justify-center gap-8 mb-24">
+          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="mailto:hello@advancelab.com">
+            <span class="material-symbols-outlined text-xl">mail</span> Email
+          </a>
+          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="#"> <span class="material-symbols-outlined text-xl">send</span> Telegram</a>
+        </div>
+        <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex items-center gap-2">
+            <img src="images/logo.png" alt="Advance Lab" class="h-6 w-auto"/>
+            <span class="font-bold uppercase tracking-tight">Advance Lab</span>
+          </div>
+          <p class="text-apple-subtext text-sm">© 2024 Advance Lab. Рост через дизайн.</p>
+          <div class="flex gap-8">
+            <a class="text-apple-subtext text-sm hover:text-apple-text transition-colors" href="#">Twitter</a>
+            <a class="text-apple-subtext text-sm hover:text-apple-text transition-colors" href="#">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    (function() {
+      var els = document.querySelectorAll('.scroll-anim, .scroll-anim-scale');
+      if (!els.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+      els.forEach(function(el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>
