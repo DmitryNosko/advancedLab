@@ -1,7 +1,7 @@
 /**
  * Netlify serverless function: приём заявки из формы «Обсудить проект».
- * Отправляет заявку в Telegram (если заданы TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID).
- * В Netlify: Site settings → Environment variables — добавьте эти переменные.
+ * ESM (.mjs) для совместимости с современным Netlify.
+ * Переменные: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID (в Netlify → Environment variables).
  */
 
 function jsonResponse(obj, statusCode = 200) {
@@ -12,7 +12,7 @@ function jsonResponse(obj, statusCode = 200) {
   };
 }
 
-exports.handler = async function (event) {
+export async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return jsonResponse({ error: 'Метод не разрешён' }, 405);
   }
@@ -47,7 +47,6 @@ exports.handler = async function (event) {
         body: JSON.stringify({
           chat_id: chatId,
           text,
-          parse_mode: 'HTML',
         }),
       });
       const result = await res.json();
@@ -64,7 +63,6 @@ exports.handler = async function (event) {
       }, 500);
     }
   }
-  // Если переменные не заданы — заявку всё равно считаем успешной (для теста деплоя)
 
   return jsonResponse({ success: true });
-};
+}
