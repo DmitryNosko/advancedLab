@@ -1,0 +1,7 @@
+[build]
+  # Публикуем содержимое studio-site
+  publish = "studio-site"
+  functions = "studio-site/netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
