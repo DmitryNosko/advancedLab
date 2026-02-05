@@ -26,6 +26,8 @@ export async function handler(event) {
 
   const name = (data.name || '').trim();
   const phone = (data.phone || '').trim();
+  const telegram = (data.telegram || '').trim();
+  const email = (data.email || '').trim();
 
   if (!name) {
     return jsonResponse({ error: 'Укажите имя.' }, 400);
@@ -38,7 +40,9 @@ export async function handler(event) {
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
   if (botToken && chatId) {
-    const text = `Новая заявка с сайта:\nИмя: ${name}\nТелефон: ${phone}`;
+    let text = `Новая заявка с сайта:\nИмя: ${name}\nТелефон: ${phone}`;
+    if (telegram) text += `\nTelegram: ${telegram}`;
+    if (email) text += `\nEmail: ${email}`;
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     try {
       const res = await fetch(url, {

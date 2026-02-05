@@ -130,10 +130,15 @@
 <body class="bg-white">
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <img src="images/logo.png" alt="Advance Lab" class="h-8 w-auto"/>
-        <h2 class="text-xl font-semibold tracking-tight uppercase">Advance Lab</h2>
-      </div>
+      <a href="#" class="flex items-center gap-3 group">
+        <span class="flex items-center justify-center w-8 h-8 rounded-[10px] bg-apple-text text-white flex-shrink-0" aria-hidden="true">
+          <img src="images/logo.png" alt="" class="w-4 h-4 object-contain invert" width="16" height="16" />
+        </span>
+        <span class="w-px h-6 bg-apple-text flex-shrink-0 self-center" aria-hidden="true"></span>
+        <h2 class="text-xl tracking-tight uppercase text-apple-text group-hover:text-black transition-colors">
+          <span class="font-bold">ADVANCE</span> <span class="font-normal">LAB</span>
+        </h2>
+      </a>
       <nav class="hidden md:flex items-center gap-10">
         <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#process">Процесс</a>
         <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#packages">Пакеты</a>
@@ -148,18 +153,39 @@
     <section class="relative pt-44 pb-32 px-6 overflow-hidden">
       <div class="max-w-5xl mx-auto text-center space-y-8">
         <h1 class="scroll-anim text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] text-apple-text">
-          Создаём цифровые инструменты для роста вашего бизнеса.
+          Сайты, Mini App в Telegram и продвижение — под ключ.
         </h1>
         <p class="scroll-anim scroll-anim-delay-1 text-xl md:text-2xl text-apple-subtext font-normal max-w-3xl mx-auto leading-relaxed">
-          Стратегический дизайн и построение процессов для усиления ваших позиций на рынке и увеличения выручки.
+          Дизайн, разработка и маркетинг от одной команды. От лендинга до продукта с ростом выручки.
         </p>
+        <p class="scroll-anim scroll-anim-delay-1 text-sm text-apple-subtext font-medium">Помогли запустить 50+ проектов</p>
         <div class="scroll-anim scroll-anim-delay-2 pt-4">
           <a class="apple-button apple-button-primary text-lg px-8 py-4" href="#contact">Обсудить проект</a>
         </div>
       </div>
     </section>
 
-    <section class="py-32 px-6 bg-apple-gray border-y border-gray-100" id="process">
+    <section class="py-16 px-6 bg-apple-gray/50 border-b border-gray-100 mt-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+          <div class="scroll-anim">
+            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">50+</p>
+            <p class="text-apple-subtext text-sm font-medium">реализованных кейсов</p>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-1">
+            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">от 500 $</p>
+            <p class="text-apple-subtext text-sm font-medium">стартовая цена проекта</p>
+          </div>
+          <div class="scroll-anim scroll-anim-delay-2">
+            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">от 2 недель</p>
+            <p class="text-apple-subtext text-sm font-medium">до запуска лендинга</p>
+          </div>
+        </div>
+        <p class="scroll-anim scroll-anim-delay-2 text-center text-apple-subtext text-sm mt-8">Стартапы · E‑commerce · Финтех · SaaS</p>
+      </div>
+    </section>
+
+    <section class="py-32 px-6 bg-apple-gray border-b border-gray-100" id="process">
       <div class="max-w-7xl mx-auto">
         <h2 class="scroll-anim text-4xl md:text-5xl font-bold tracking-tight mb-16 text-center">Как мы работаем</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -188,6 +214,27 @@
             <p class="text-apple-subtext text-sm leading-relaxed">Стратегический маркетинг для вывода продукта на целевую аудиторию.</p>
           </div>
         </div>
+        <div class="scroll-anim scroll-anim-delay-3 mt-10 p-6 rounded-2xl bg-white/80 border border-gray-100 flex flex-wrap items-start gap-4">
+          <span class="material-symbols-outlined text-2xl text-apple-text flex-shrink-0">visibility</span>
+          <div class="min-w-0">
+            <p class="text-apple-text font-medium mb-1">Мониторинг заказов и чекапы</p>
+            <p class="text-apple-subtext text-sm leading-relaxed">Работаем каждый день. Раз в пару дней (по согласованию) проводим чекап проделанной работы — вы всегда в курсе прогресса.</p>
+          </div>
+        </div>
+        <div class="scroll-anim scroll-anim-delay-3 mt-4 p-6 rounded-2xl bg-white/80 border border-gray-100 flex flex-wrap items-start gap-4">
+          <span class="material-symbols-outlined text-2xl text-apple-text flex-shrink-0">support_agent</span>
+          <div class="min-w-0">
+            <p class="text-apple-text font-medium mb-1">Связь и поддержка</p>
+            <p class="text-apple-subtext text-sm leading-relaxed">На связи в Telegram. Вопросы по проекту решаем оперативно, без лишних встреч — всё в переписке.</p>
+          </div>
+        </div>
+        <div class="scroll-anim scroll-anim-delay-3 mt-4 p-6 rounded-2xl bg-white/80 border border-gray-100 flex flex-wrap items-start gap-4">
+          <span class="material-symbols-outlined text-2xl text-apple-text flex-shrink-0">verified</span>
+          <div class="min-w-0">
+            <p class="text-apple-text font-medium mb-1">Прозрачность и сроки</p>
+            <p class="text-apple-subtext text-sm leading-relaxed">Этапы и дедлайны фиксируем в договоре. Правки по макетам и функционалу заложены в процесс — без сюрпризов.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -203,6 +250,7 @@
               <h3 class="text-2xl font-bold mb-2">Сайт</h3>
               <p class="text-apple-subtext">Под ваши цели: дизайн, вёрстка, базовая SEO.</p>
               <p class="text-xl font-bold text-apple-text mt-3">от 500 $</p>
+              <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
               <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Адаптивный дизайн под мобильные и десктоп</li>
@@ -217,6 +265,7 @@
               <h3 class="text-2xl font-bold mb-2">Сайт + Mini App</h3>
               <p class="text-apple-subtext">Сайт и приложение в Telegram с общей логикой и одним контактом.</p>
               <p class="text-xl font-bold text-apple-text mt-3">от 800 $</p>
+              <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
               <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Маркетинговый сайт</li>
@@ -230,6 +279,7 @@
               <h3 class="text-2xl font-bold mb-2">Полный цикл</h3>
               <p class="text-apple-subtext">Сайт, Mini App, стратегия запуска и продвижение. Всё из одних рук.</p>
               <p class="text-xl font-bold text-apple-text mt-3">от 1 300 $</p>
+              <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
               <li class="flex items-start gap-3 text-sm"><span class="material-symbols-outlined text-green-500 text-lg">check_circle</span>Сайт и Mini App</li>
@@ -286,13 +336,13 @@
         <div class="flex overflow-x-auto gap-10 px-8 md:px-[calc((100vw-80rem)/2+2rem)] pb-20 hide-scrollbar snap-x snap-mandatory scroll-smooth">
           <div class="flex-none snap-center w-[420px]">
             <div class="scroll-anim-scale relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
-              <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="images/fintech-evolution.png">
-                <source src="videos/fintech-evolution.mp4" type="video/mp4">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="videos/game-store.mp4" type="video/mp4">
               </video>
             </div>
             <div class="scroll-anim scroll-anim-delay-1 mt-6 text-center">
-              <h3 class="text-2xl font-bold tracking-tight mb-2">FinTech Evolution</h3>
-              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Инвестиционная платформа с фокусом на UX и безопасность транзакций.</p>
+              <h3 class="text-2xl font-bold tracking-tight mb-2">Game Store</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Сайт магазина игр: каталог, карточки товаров и удобный поиск. Дизайн и вёрстка под современный цифровой магазин.</p>
             </div>
           </div>
           <div class="flex-none snap-center w-[420px]">
@@ -326,6 +376,28 @@
               <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Полнофункциональный торговый терминал внутри мессенджера Telegram.</p>
             </div>
           </div>
+          <div class="flex-none snap-center w-[420px]">
+            <div class="scroll-anim-scale scroll-anim-delay-4 relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <source src="videos/ai-fitness-assistant.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="scroll-anim scroll-anim-delay-5 mt-6 text-center">
+              <h3 class="text-2xl font-bold tracking-tight mb-2">AI Fitness Assistant</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Сайт и интерфейс персонального фитнес-ассистента на базе ИИ: подбор тренировок, трекинг прогресса и умные рекомендации в одном продукте.</p>
+            </div>
+          </div>
+          <div class="flex-none snap-center w-[420px]">
+            <div class="scroll-anim-scale scroll-anim-delay-5 relative rounded-2xl overflow-hidden bg-gray-100 shadow-xl border border-gray-100 aspect-video">
+              <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="images/fintech-evolution.png">
+                <source src="videos/fintech-evolution.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="scroll-anim scroll-anim-delay-5 mt-6 text-center">
+              <h3 class="text-2xl font-bold tracking-tight mb-2">FinTech Evolution</h3>
+              <p class="text-apple-subtext text-base max-w-[360px] mx-auto leading-relaxed">Инвестиционная платформа с фокусом на UX и безопасность транзакций.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -333,6 +405,7 @@
     <footer class="py-32 px-6 border-t border-gray-100" id="contact">
       <div class="max-w-5xl mx-auto text-center">
         <h2 class="scroll-anim text-5xl md:text-7xl font-bold tracking-tight mb-12">Готовы к росту?</h2>
+        <p class="text-apple-subtext text-sm mb-6">Ответим в течение 24 часов. Без обязательств.</p>
         <div class="scroll-anim scroll-anim-delay-1 mb-16">
           <a class="apple-button apple-button-primary text-xl px-12 py-5 inline-block" href="mailto:hello@advancelab.com">Обсудить проект</a>
         </div>
@@ -344,10 +417,13 @@
         </div>
         <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <div class="flex items-center gap-2">
-            <img src="images/logo.png" alt="Advance Lab" class="h-6 w-auto"/>
-            <span class="font-bold uppercase tracking-tight">Advance Lab</span>
+            <span class="flex items-center justify-center w-6 h-6 rounded-[8px] bg-apple-text text-white flex-shrink-0" aria-hidden="true">
+              <img src="images/logo.png" alt="" class="w-3.5 h-3.5 object-contain invert" width="14" height="14" />
+            </span>
+            <span class="w-px h-4 bg-apple-text flex-shrink-0 self-center" aria-hidden="true"></span>
+            <span class="text-sm tracking-tight uppercase"><span class="font-bold">ADVANCE</span> <span class="font-normal">LAB</span></span>
           </div>
-          <p class="text-apple-subtext text-sm">© 2024 Advance Lab. Рост через дизайн.</p>
+          <p class="text-apple-subtext text-sm">© 2025 Advance Lab. Рост через дизайн.</p>
           <div class="flex gap-8">
             <a class="text-apple-subtext text-sm hover:text-apple-text transition-colors" href="#">Twitter</a>
             <a class="text-apple-subtext text-sm hover:text-apple-text transition-colors" href="#">LinkedIn</a>
