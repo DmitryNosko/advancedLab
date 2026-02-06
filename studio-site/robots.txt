@@ -1,0 +1,9 @@
+# Advance Lab - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://advancelab.by/sitemap.xml
+
+# Disallow admin/system paths (if any)
+Disallow: /.netlify/
