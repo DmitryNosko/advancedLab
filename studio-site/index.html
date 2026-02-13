@@ -6,7 +6,7 @@
   <title>Advance Lab | Сайты, Mini App и продвижение под ключ</title>
   
   <!-- SEO Meta -->
-  <meta name="description" content="Создаём сайты, Telegram Mini App и запускаем продвижение под ключ. Дизайн, разработка и маркетинг от одной команды. 50+ реализованных проектов. От 500$."/>
+  <meta name="description" content="Создаём сайты, Telegram Mini App и запускаем продвижение под ключ. Дизайн, разработка и маркетинг от одной команды. 50+ реализованных проектов. От 1500 BYN."/>
   <meta name="keywords" content="создание сайтов, разработка сайтов, telegram mini app, веб-студия, лендинг, продвижение сайтов, веб-разработка, Беларусь, Минск"/>
   <meta name="author" content="Advance Lab"/>
   <meta name="robots" content="index, follow"/>
@@ -43,7 +43,7 @@
     "description": "Создаём сайты, Telegram Mini App и запускаем продвижение под ключ",
     "url": "https://advancelab.by",
     "logo": "https://advancelab.by/images/logo.png",
-    "priceRange": "от 500$",
+    "priceRange": "от 1500 BYN",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "BY"
@@ -200,9 +200,42 @@
         <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#why-us">Преимущества</a>
         <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#works">Работы</a>
       </nav>
-      <button type="button" class="apple-button apple-button-primary text-sm py-2 px-5 js-open-contact-form">Обсудить проект</button>
+      <div class="hidden md:flex items-center gap-6">
+        <a class="flex items-center gap-1.5 text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="tel:+375292800252">+375 (29) 280-02-52</a>
+        <a class="flex items-center gap-1.5 text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="https://t.me/iDzima" target="_blank" rel="noopener"><span class="material-symbols-outlined text-lg">send</span> Telegram</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button type="button" class="apple-button apple-button-primary text-sm py-2 px-5 hidden md:inline-block js-open-contact-form">Обсудить проект</button>
+        <button type="button" id="mobile-menu-btn" class="md:hidden p-3 -m-1 text-apple-text hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Открыть меню">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Мобильное меню -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden pointer-events-none opacity-0 transition-opacity duration-200" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/20 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+    <div id="mobile-menu-panel" class="absolute top-0 right-0 bottom-0 w-full max-w-[min(320px,85vw)] bg-white shadow-xl flex flex-col pt-20 px-6 pb-8 overflow-y-auto translate-x-full transition-transform duration-200">
+      <button type="button" id="mobile-menu-close" class="absolute top-4 right-4 p-3 -m-1 text-apple-subtext hover:text-apple-text hover:bg-gray-100 rounded-lg transition-colors" aria-label="Закрыть меню">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+      <nav class="flex flex-col gap-5">
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-nav-link" href="#process">Процесс</a>
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-nav-link" href="#packages">Пакеты</a>
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-nav-link" href="#why-us">Преимущества</a>
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-nav-link" href="#works">Работы</a>
+        <div class="border-t border-gray-100 pt-5 mt-1">
+          <p class="text-xs font-medium text-apple-subtext uppercase tracking-wider mb-4">Контакты</p>
+          <div class="flex flex-col gap-4">
+            <a class="text-lg font-medium text-apple-text hover:text-black transition-colors flex items-center gap-3 py-2 js-mobile-nav-link" href="tel:+375292800252"><span class="material-symbols-outlined text-2xl">phone</span>+375 (29) 280-02-52</a>
+            <a class="text-lg font-medium text-apple-text hover:text-black transition-colors flex items-center gap-3 py-2 js-mobile-nav-link" href="https://t.me/iDzima" target="_blank" rel="noopener"><span class="material-symbols-outlined text-2xl">send</span>Telegram</a>
+          </div>
+        </div>
+      </nav>
+      <button type="button" class="mt-6 apple-button apple-button-primary w-full py-4 text-base js-open-contact-form">Обсудить проект</button>
+    </div>
+  </div>
 
   <main>
     <section class="relative pt-44 pb-32 px-6 overflow-hidden">
@@ -228,7 +261,7 @@
             <p class="text-apple-subtext text-sm font-medium">реализованных кейсов</p>
           </div>
           <div class="scroll-anim scroll-anim-delay-1">
-            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">от 500 $</p>
+            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">от 1 500 BYN</p>
             <p class="text-apple-subtext text-sm font-medium">стартовая цена проекта</p>
           </div>
           <div class="scroll-anim scroll-anim-delay-2">
@@ -304,7 +337,7 @@
             <div class="mb-8">
               <h3 class="text-2xl font-bold mb-2">Сайт</h3>
               <p class="text-apple-subtext">Под ваши цели: дизайн, вёрстка, базовая SEO.</p>
-              <p class="text-xl font-bold text-apple-text mt-3">от 500 $</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 1 500 BYN</p>
               <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
@@ -319,7 +352,7 @@
             <div class="mb-8">
               <h3 class="text-2xl font-bold mb-2">Сайт + Mini App</h3>
               <p class="text-apple-subtext">Сайт и приложение в Telegram с общей логикой и одним контактом.</p>
-              <p class="text-xl font-bold text-apple-text mt-3">от 800 $</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 2 400 BYN</p>
               <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
@@ -333,7 +366,7 @@
             <div class="mb-8">
               <h3 class="text-2xl font-bold mb-2">Полный цикл</h3>
               <p class="text-apple-subtext">Сайт, Mini App, стратегия запуска и продвижение. Всё из одних рук.</p>
-              <p class="text-xl font-bold text-apple-text mt-3">от 1 300 $</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 3 900 BYN</p>
               <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
@@ -464,10 +497,10 @@
           <button type="button" class="apple-button apple-button-primary text-xl px-12 py-5 js-open-contact-form">Обсудить проект</button>
         </div>
         <div class="scroll-anim scroll-anim-delay-2 flex flex-col md:flex-row justify-center gap-8 mb-24">
-          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="mailto:hello@advancelab.com">
-            <span class="material-symbols-outlined text-xl">mail</span> Email
+          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="tel:+375292800252">
+            <span class="material-symbols-outlined text-xl">phone</span> +375 (29) 280-02-52
           </a>
-          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="https://t.me/iDzima" target="_blank" rel="noopener"> <span class="material-symbols-outlined text-xl">send</span> Telegram</a>
+          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="https://t.me/iDzima" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">send</span> Telegram</a>
         </div>
         <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <div class="flex items-center gap-2">
@@ -489,31 +522,36 @@
         <span class="material-symbols-outlined text-2xl">close</span>
       </button>
       <h2 class="text-2xl font-bold text-apple-text mb-2">Обсудить проект</h2>
-      <p class="text-apple-subtext text-sm mb-4">Ответим в течение 24 часов. Без обязательств.</p>
+      <p class="text-apple-subtext text-sm mb-4">Ответим в течение 24 часов.</p>
       <form id="contact-form" class="space-y-4">
         <div id="contact-form-error" class="hidden rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700" role="alert"></div>
         <div>
-          <label for="contact-name" class="block text-sm font-medium text-apple-text mb-2">Имя</label>
+          <label for="contact-name" class="block text-sm font-medium text-apple-text mb-2">Имя *</label>
           <input id="contact-name" name="name" type="text" required placeholder="Как к вам обращаться" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-apple-text placeholder-gray-400 focus:border-black focus:ring-2 focus:ring-black/20 outline-none transition-colors"/>
         </div>
         <div>
+          <p class="text-sm font-medium text-apple-text mb-3">Укажите удобный способ связи</p>
+          <div class="flex gap-2" role="group" aria-label="Способ связи">
+            <button type="button" class="js-contact-method flex-1 py-3 px-4 rounded-xl font-medium text-sm transition-all border-2 js-method-telegram border-black bg-black text-white" data-method="telegram">Telegram</button>
+            <button type="button" class="js-contact-method flex-1 py-3 px-4 rounded-xl font-medium text-sm transition-all border-2 js-method-phone border-gray-200 bg-white text-apple-text hover:border-gray-300" data-method="phone">Телефон</button>
+          </div>
+        </div>
+        <div id="contact-field-telegram" class="contact-method-field">
+          <label for="contact-telegram" class="block text-sm font-medium text-apple-text mb-2">Telegram username *</label>
+          <input id="contact-telegram" name="telegram" type="text" placeholder="@username" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-apple-text placeholder-gray-400 focus:border-black focus:ring-2 focus:ring-black/20 outline-none transition-colors"/>
+        </div>
+        <div id="contact-field-phone" class="contact-method-field hidden">
           <div class="flex gap-1 mb-2" role="group" aria-label="Выбор страны">
             <button type="button" class="js-country js-country-by w-12 h-12 rounded-xl border-2 border-black bg-apple-gray flex items-center justify-center text-2xl transition-colors" data-country="BY" title="Беларусь">🇧🇾</button>
             <button type="button" class="js-country js-country-ru w-12 h-12 rounded-xl border-2 border-gray-200 bg-white flex items-center justify-center text-2xl transition-colors" data-country="RU" title="Россия">🇷🇺</button>
           </div>
-          <label for="contact-phone" class="block text-sm font-medium text-apple-text mb-2">Номер мобильного телефона</label>
-          <input id="contact-phone" name="phone" type="tel" required placeholder="+375 (29) 123-45-67" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-apple-text placeholder-gray-400 focus:border-black focus:ring-2 focus:ring-black/20 outline-none transition-colors" data-phone-input/>
+          <label for="contact-phone" class="block text-sm font-medium text-apple-text mb-2">Номер мобильного телефона *</label>
+          <input id="contact-phone" name="phone" type="tel" placeholder="+375 (29) 123-45-67" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-apple-text placeholder-gray-400 focus:border-black focus:ring-2 focus:ring-black/20 outline-none transition-colors" data-phone-input/>
         </div>
-        <div>
-          <label for="contact-telegram" class="block text-sm font-medium text-apple-text mb-2">Ник в Telegram <span class="text-apple-subtext font-normal">(по желанию)</span></label>
-          <input id="contact-telegram" name="telegram" type="text" placeholder="@username" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-apple-text placeholder-gray-400 focus:border-black focus:ring-2 focus:ring-black/20 outline-none transition-colors"/>
+        <div class="flex gap-3 pt-2">
+          <button type="button" class="flex-1 py-3 px-4 rounded-xl font-medium border-2 border-gray-300 bg-white text-apple-text hover:bg-gray-50 transition-colors js-close-contact-form">Отмена</button>
+          <button type="submit" class="flex-1 apple-button apple-button-primary py-3 js-submit-btn">Отправить</button>
         </div>
-        <div>
-          <label for="contact-email" class="block text-sm font-medium text-apple-text mb-2">Email <span class="text-apple-subtext font-normal">(по желанию)</span></label>
-          <input id="contact-email" name="email" type="email" placeholder="example@mail.com" class="w-full rounded-xl border border-gray-300 px-4 py-3 text-apple-text placeholder-gray-400 focus:border-black focus:ring-2 focus:ring-black/20 outline-none transition-colors"/>
-        </div>
-        <button type="submit" class="w-full apple-button apple-button-primary py-3 js-submit-btn">Отправить</button>
-        <p class="text-center text-apple-subtext text-xs mt-3">Или напишите в <a href="https://t.me/iDzima" target="_blank" rel="noopener" class="text-apple-text font-medium underline hover:no-underline">Telegram</a> — ответим так же быстро.</p>
       </form>
     </div>
   </div>
@@ -535,6 +573,35 @@
     })();
 
     (function() {
+      var menuEl = document.getElementById('mobile-menu');
+      var menuBtn = document.getElementById('mobile-menu-btn');
+      var menuClose = document.getElementById('mobile-menu-close');
+      var menuBackdrop = document.getElementById('mobile-menu-backdrop');
+      var navLinks = document.querySelectorAll('.js-mobile-nav-link');
+      if (!menuEl || !menuBtn) return;
+      function openMenu() {
+        menuEl.classList.remove('pointer-events-none', 'opacity-0');
+        menuEl.classList.add('pointer-events-auto', 'opacity-100');
+        document.getElementById('mobile-menu-panel')?.classList.remove('translate-x-full');
+        menuEl.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        menuEl.classList.add('pointer-events-none', 'opacity-0');
+        menuEl.classList.remove('pointer-events-auto', 'opacity-100');
+        document.getElementById('mobile-menu-panel')?.classList.add('translate-x-full');
+        menuEl.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      menuBtn.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      menuBackdrop.addEventListener('click', closeMenu);
+      navLinks.forEach(function(link) { link.addEventListener('click', closeMenu); });
+      var menuCta = menuEl.querySelector('.js-open-contact-form');
+      if (menuCta) menuCta.addEventListener('click', closeMenu);
+    })();
+
+    (function() {
       var modal = document.getElementById('contact-form-modal');
       var form = document.getElementById('contact-form');
       var formError = document.getElementById('contact-form-error');
@@ -545,11 +612,39 @@
       var API_URL = '/.netlify/functions/submit-contact';
 
       var currentCountry = 'BY';
+      var contactMethod = 'telegram';
+
+      function setContactMethod(method) {
+        contactMethod = method;
+        var tgField = document.getElementById('contact-field-telegram');
+        var phoneField = document.getElementById('contact-field-phone');
+        var tgInput = form && form.querySelector('[name="telegram"]');
+        var phoneInput = form && form.querySelector('[name="phone"]');
+        document.querySelectorAll('.js-contact-method').forEach(function(btn) {
+          var isSelected = btn.getAttribute('data-method') === method;
+          btn.classList.toggle('border-black', isSelected);
+          btn.classList.toggle('bg-black', isSelected);
+          btn.classList.toggle('text-white', isSelected);
+          btn.classList.toggle('border-gray-200', !isSelected);
+          btn.classList.toggle('bg-white', !isSelected);
+          btn.classList.toggle('text-apple-text', !isSelected);
+        });
+        if (tgField) tgField.classList.toggle('hidden', method !== 'telegram');
+        if (phoneField) phoneField.classList.toggle('hidden', method !== 'phone');
+        if (tgInput) tgInput.required = method === 'telegram';
+        if (phoneInput) phoneInput.required = method === 'phone';
+        if (method === 'phone') {
+          updateCountryButtons();
+          setPhonePrefix();
+        }
+      }
 
       function openModal() {
         if (!modal) return;
         if (formError) { formError.classList.add('hidden'); formError.textContent = ''; }
         currentCountry = 'BY';
+        contactMethod = 'telegram';
+        setContactMethod('telegram');
         updateCountryButtons();
         setPhonePrefix();
         modal.classList.remove('hidden');
@@ -615,6 +710,12 @@
         return ru.slice(0, 11);
       }
 
+      document.querySelectorAll('.js-contact-method').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          setContactMethod(btn.getAttribute('data-method'));
+        });
+      });
+
       if (document.querySelectorAll('.js-country').length) {
         document.querySelectorAll('.js-country').forEach(function(btn) {
           btn.addEventListener('click', function() {
@@ -648,7 +749,13 @@
 
       if (form) {
         form.addEventListener('reset', function() {
-          setTimeout(function() { currentCountry = 'BY'; updateCountryButtons(); setPhonePrefix(); }, 0);
+          setTimeout(function() {
+            currentCountry = 'BY';
+            contactMethod = 'telegram';
+            setContactMethod('telegram');
+            updateCountryButtons();
+            setPhonePrefix();
+          }, 0);
         });
       }
 
@@ -680,36 +787,52 @@
         if (formError) formError.classList.add('hidden');
       }
 
+      function validateTelegram(val) {
+        if (!val || !val.trim()) return { ok: false, reason: 'Укажите username в Telegram.' };
+        var v = val.trim().replace(/^@/, '');
+        if (v.length < 5) return { ok: false, reason: 'Username должен содержать минимум 5 символов.' };
+        if (!/^[a-zA-Z0-9_]+$/.test(v)) return { ok: false, reason: 'Username может содержать только латинские буквы, цифры и подчёркивание.' };
+        return { ok: true, value: (val.trim()[0] === '@' ? val.trim() : '@' + v) };
+      }
+
       if (form) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
           var nameEl = form.querySelector('[name="name"]');
           var phoneEl = form.querySelector('[name="phone"]');
           var telegramEl = form.querySelector('[name="telegram"]');
-          var emailEl = form.querySelector('[name="email"]');
           var name = (nameEl && nameEl.value || '').trim();
           var phone = (phoneEl && phoneEl.value || '').trim();
           var telegram = (telegramEl && telegramEl.value || '').trim();
-          var email = (emailEl && emailEl.value || '').trim();
           hideError();
           if (!name) {
             showError('Укажите имя.');
             if (nameEl) nameEl.focus();
             return;
           }
-          var pv = validatePhone(phone);
-          if (!pv.ok) {
-            showError(pv.reason);
-            if (phoneEl) phoneEl.focus();
-            return;
+          if (contactMethod === 'telegram') {
+            var tv = validateTelegram(telegram);
+            if (!tv.ok) {
+              showError(tv.reason);
+              if (telegramEl) telegramEl.focus();
+              return;
+            }
+            telegram = tv.value;
+          } else {
+            var pv = validatePhone(phone);
+            if (!pv.ok) {
+              showError(pv.reason);
+              if (phoneEl) phoneEl.focus();
+              return;
+            }
           }
           if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Отправка…';
           }
-          var payload = { name: name, phone: phone };
-          if (telegram) payload.telegram = telegram;
-          if (email) payload.email = email;
+          var payload = { name: name, contactMethod: contactMethod };
+          if (contactMethod === 'telegram') payload.telegram = telegram;
+          else payload.phone = phone;
           fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

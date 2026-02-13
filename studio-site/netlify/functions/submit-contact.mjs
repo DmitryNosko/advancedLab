@@ -25,24 +25,30 @@ export async function handler(event) {
   }
 
   const name = (data.name || '').trim();
+  const contactMethod = (data.contactMethod || 'phone');
   const phone = (data.phone || '').trim();
   const telegram = (data.telegram || '').trim();
-  const email = (data.email || '').trim();
 
   if (!name) {
     return jsonResponse({ error: 'Укажите имя.' }, 400);
   }
-  if (!phone) {
-    return jsonResponse({ error: 'Укажите номер телефона.' }, 400);
+  if (contactMethod === 'telegram') {
+    if (!telegram) {
+      return jsonResponse({ error: 'Укажите username в Telegram.' }, 400);
+    }
+  } else {
+    if (!phone) {
+      return jsonResponse({ error: 'Укажите номер телефона.' }, 400);
+    }
   }
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
 
   if (botToken && chatId) {
-    let text = `Новая заявка с сайта:\nИмя: ${name}\nТелефон: ${phone}`;
-    if (telegram) text += `\nTelegram: ${telegram}`;
-    if (email) text += `\nEmail: ${email}`;
+    let text = `Новая заявка с сайта:\nИмя: ${name}\nСпособ связи: ${contactMethod === 'telegram' ? 'Telegram' : 'Телефон'}`;
+    if (contactMethod === 'telegram') text += `\nTelegram: ${telegram}`;
+    else text += `\nТелефон: ${phone}`;
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     try {
       const res = await fetch(url, {

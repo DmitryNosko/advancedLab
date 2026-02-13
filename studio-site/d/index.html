@@ -163,9 +163,42 @@
         <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#why-us">Преимущества</a>
         <a class="text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="#works">Работы</a>
       </nav>
-      <a class="apple-button apple-button-primary text-sm py-2 px-5" href="#contact">Обсудить проект</a>
+      <div class="hidden md:flex items-center gap-6">
+        <a class="flex items-center gap-1.5 text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="tel:+375292800252">+375 (29) 280-02-52</a>
+        <a class="flex items-center gap-1.5 text-apple-subtext hover:text-apple-text text-sm font-medium transition-colors" href="https://t.me/iDzima" target="_blank" rel="noopener"><span class="material-symbols-outlined text-lg">send</span> Telegram</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a class="apple-button apple-button-primary text-sm py-2 px-5 hidden md:inline-block" href="#contact">Обсудить проект</a>
+        <button type="button" id="mobile-menu-btn" class="md:hidden p-3 -m-1 text-apple-text hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Открыть меню">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Мобильное меню -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden pointer-events-none opacity-0 transition-opacity duration-200" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/20 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+    <div id="mobile-menu-panel" class="absolute top-0 right-0 bottom-0 w-full max-w-[min(320px,85vw)] bg-white shadow-xl flex flex-col pt-20 px-6 pb-8 overflow-y-auto translate-x-full transition-transform duration-200">
+      <button type="button" id="mobile-menu-close" class="absolute top-4 right-4 p-3 -m-1 text-apple-subtext hover:text-apple-text hover:bg-gray-100 rounded-lg transition-colors" aria-label="Закрыть меню">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+      <nav class="flex flex-col gap-5">
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-menu-close" href="#process">Процесс</a>
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-menu-close" href="#packages">Пакеты</a>
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-menu-close" href="#why-us">Преимущества</a>
+        <a class="text-lg font-medium text-apple-text hover:text-black transition-colors py-1 js-mobile-menu-close" href="#works">Работы</a>
+        <div class="border-t border-gray-100 pt-5 mt-1">
+          <p class="text-xs font-medium text-apple-subtext uppercase tracking-wider mb-4">Контакты</p>
+          <div class="flex flex-col gap-4">
+            <a class="text-lg font-medium text-apple-text hover:text-black transition-colors flex items-center gap-3 py-2 js-mobile-menu-close" href="tel:+375292800252"><span class="material-symbols-outlined text-2xl">phone</span>+375 (29) 280-02-52</a>
+            <a class="text-lg font-medium text-apple-text hover:text-black transition-colors flex items-center gap-3 py-2 js-mobile-menu-close" href="https://t.me/iDzima" target="_blank" rel="noopener"><span class="material-symbols-outlined text-2xl">send</span>Telegram</a>
+          </div>
+        </div>
+      </nav>
+      <a class="mt-6 apple-button apple-button-primary text-center block py-4 text-base js-mobile-menu-close" href="#contact">Обсудить проект</a>
+    </div>
+  </div>
 
   <main>
     <section class="relative pt-44 pb-32 px-6 overflow-hidden">
@@ -191,7 +224,7 @@
             <p class="text-apple-subtext text-sm font-medium">реализованных кейсов</p>
           </div>
           <div class="scroll-anim scroll-anim-delay-1">
-            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">от 500 $</p>
+            <p class="text-3xl md:text-4xl font-bold text-apple-text mb-1">от 1 500 BYN</p>
             <p class="text-apple-subtext text-sm font-medium">стартовая цена проекта</p>
           </div>
           <div class="scroll-anim scroll-anim-delay-2">
@@ -267,7 +300,7 @@
             <div class="mb-8">
               <h3 class="text-2xl font-bold mb-2">Сайт</h3>
               <p class="text-apple-subtext">Под ваши цели: дизайн, вёрстка, базовая SEO.</p>
-              <p class="text-xl font-bold text-apple-text mt-3">от 500 $</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 1 500 BYN</p>
               <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
@@ -282,7 +315,7 @@
             <div class="mb-8">
               <h3 class="text-2xl font-bold mb-2">Сайт + Mini App</h3>
               <p class="text-apple-subtext">Сайт и приложение в Telegram с общей логикой и одним контактом.</p>
-              <p class="text-xl font-bold text-apple-text mt-3">от 800 $</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 2 400 BYN</p>
               <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
@@ -296,7 +329,7 @@
             <div class="mb-8">
               <h3 class="text-2xl font-bold mb-2">Полный цикл</h3>
               <p class="text-apple-subtext">Сайт, Mini App, стратегия запуска и продвижение. Всё из одних рук.</p>
-              <p class="text-xl font-bold text-apple-text mt-3">от 1 300 $</p>
+              <p class="text-xl font-bold text-apple-text mt-3">от 3 900 BYN</p>
               <p class="text-xs text-apple-subtext mt-1">Старт после предоплаты · Сроки в договоре</p>
             </div>
             <ul class="space-y-4 mb-12 flex-grow">
@@ -428,10 +461,10 @@
           <a class="apple-button apple-button-primary text-xl px-12 py-5 inline-block" href="mailto:hello@advancelab.com">Обсудить проект</a>
         </div>
         <div class="scroll-anim scroll-anim-delay-2 flex flex-col md:flex-row justify-center gap-8 mb-24">
-          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="mailto:hello@advancelab.com">
-            <span class="material-symbols-outlined text-xl">mail</span> Email
+          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="tel:+375292800252">
+            <span class="material-symbols-outlined text-xl">phone</span> +375 (29) 280-02-52
           </a>
-          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="#"> <span class="material-symbols-outlined text-xl">send</span> Telegram</a>
+          <a class="text-lg font-medium hover:text-accent transition-colors flex items-center justify-center gap-2" href="https://t.me/iDzima" target="_blank" rel="noopener"><span class="material-symbols-outlined text-xl">send</span> Telegram</a>
         </div>
         <div class="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <div class="flex items-center gap-2">
@@ -465,6 +498,33 @@
         });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
       els.forEach(function(el) { observer.observe(el); });
+    })();
+
+    (function() {
+      var menuEl = document.getElementById('mobile-menu');
+      var menuBtn = document.getElementById('mobile-menu-btn');
+      var menuClose = document.getElementById('mobile-menu-close');
+      var menuBackdrop = document.getElementById('mobile-menu-backdrop');
+      var closeLinks = document.querySelectorAll('.js-mobile-menu-close');
+      if (!menuEl || !menuBtn) return;
+      function openMenu() {
+        menuEl.classList.remove('pointer-events-none', 'opacity-0');
+        menuEl.classList.add('pointer-events-auto', 'opacity-100');
+        document.getElementById('mobile-menu-panel')?.classList.remove('translate-x-full');
+        menuEl.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        menuEl.classList.add('pointer-events-none', 'opacity-0');
+        menuEl.classList.remove('pointer-events-auto', 'opacity-100');
+        document.getElementById('mobile-menu-panel')?.classList.add('translate-x-full');
+        menuEl.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      menuBtn.addEventListener('click', openMenu);
+      menuClose.addEventListener('click', closeMenu);
+      menuBackdrop.addEventListener('click', closeMenu);
+      closeLinks.forEach(function(link) { link.addEventListener('click', closeMenu); });
     })();
   </script>
 </body>
